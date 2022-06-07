@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% block info %}
+
+<ul>
+
+{% for r in rooms %}
+
+<li><a href = {{r.room_name}}> {{r.room_name}} </a></li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock  %}

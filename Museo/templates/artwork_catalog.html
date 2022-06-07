@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+
+{% block info %}
+<ul>
+
+{% for a in artworks %}
+
+<li><a href = {{a.artwork_name}}> {{a.artwork_name}} </a></li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock  %}
