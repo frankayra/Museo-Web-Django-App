@@ -2,11 +2,13 @@
 
 {% block info %}
 
+<h3>Salas de exposición</h3>
+
 <ul>
 
 {% for r in rooms %}
 
-<li><a href = {{r.room_name}}> {{r.room_name}} </a></li>
+<li><a href = "{{r.room_name}}"> {{r.room_name}} </a></li>
 
 {% endfor %}
 

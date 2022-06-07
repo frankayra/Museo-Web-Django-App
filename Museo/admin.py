@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Room,Expose,Artwork, Sculpture,Paint,PaintStyle,SculptureMaterial,SculptureStyle 
+from .models import Room,Expose,Artwork, Sculpture,Paint,PaintStyle,SculptureMaterial,SculptureStyle,PaintTecnic 
 # Register your models here.
 
 admin.site.register(Room)
@@ -9,7 +9,8 @@ admin.site.register(Sculpture)
 admin.site.register(SculptureStyle)
 admin.site.register(Paint)
 admin.site.register(PaintStyle)
-admin.site.register(SculptureMaterial) 
+admin.site.register(SculptureMaterial)
+admin.site.register(PaintTecnic) 
 
 
 

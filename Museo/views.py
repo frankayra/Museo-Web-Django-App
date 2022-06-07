@@ -11,18 +11,13 @@ def Services(request):
 
 def RoomCatalog(request):
     rooms = Catalogo.Lista_Salas()
-    return render(request, 'room_catalog.html',{'rooms': rooms})
+    return render(request, 'room_catalog.html', {'rooms': rooms})
 
 def ArtWorkCatalog(request, room):
     artworks = Catalogo.Obras_por_sala(room)
-    return render(request, 'room_catalog.html',{'artworks': artworks})
+    return render(request, 'artwork_catalog.html', {'artworks': artworks, 'room': room})
 
-def ArtWorkInfo(request):
-    return HttpResponse("Hola Frank :) !!!")
-
-def Documentation(request):
-    return render(request, 'Informe.html')
-
-def ContactUs(request):
-    return render(request, 'contact.html')
+def ArtWorkInfo(request,artworkname,room):
+    artwork = Catalogo.Atributos_obra(artworkname)
+    return render(request, 'artworkinfo.html', {'artwork': artwork})
 

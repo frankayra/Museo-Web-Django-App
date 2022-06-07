@@ -5,7 +5,7 @@ from datetime import *
 
 def Obras_por_sala(nombre_sala):
     sala = Room.objects.get(room_name=nombre_sala)
-    return sala.expose_set.filter(exhibition_start_date__lte=datetime.now(), exhibition_end_date__gte=datetime.now()).select_related('id_artwork__artwork_name')
+    return sala.expose_set.filter(exhibition_start_date__lte=datetime.now(), exhibition_end_date__gte=datetime.now()).values('id_artwork__artwork_name')
 
 
     # for tupla in Expose.objects.get(id_room=id_sala):
@@ -21,4 +21,4 @@ def Atributos_obra(nombre_obra):
 
 
 def Lista_Salas():
-    return Room.objects.all()
+    return Room.objects.all().values('room_name')
