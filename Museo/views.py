@@ -20,3 +20,9 @@ def ArtWorkCatalog(request, room):
 def ArtWorkInfo(request):
     return HttpResponse("Hola Frank :) !!!")
 
+def Documentation(request):
+    return render(request, 'Informe.html')
+
+def ContactUs(request):
+    return render(request, 'contact.html')
+

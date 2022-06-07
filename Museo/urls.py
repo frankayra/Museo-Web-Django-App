@@ -8,6 +8,8 @@ urlpatterns = [
     path('services/', views.Services, name = "services"),
     path('catalog/', views.RoomCatalog, name = "catalog"),
     path('catalog/<str:room>/', views.ArtWorkCatalog, name = "artworkcatalog"),
+    path('contact/', views.ContactUs, name = "contact"),
+    path('docs/', views.Documentation, name = "docs"),
     
 ]
 

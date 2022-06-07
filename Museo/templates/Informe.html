@@ -1,0 +1,460 @@
+{% extends 'base.html' %} 
+
+{% block info %}
+
+
+
+<!DOCTYPE html><html><head>
+      <title>Informe</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Frank\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.3\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <style>
+    .header1
+    {
+        font-size: 25px;
+    }
+    .header2
+    {
+        font-size: 18px;
+    }
+    .box
+    {
+        background-color: #F3DABD;
+        margin-left: 30px;
+        border-radius: 20px;
+    }
+    .line
+    {
+        background-color: red;
+        height: 1px;
+    }
+</style>
+<h1 class="mume-header" id="centerseminario-final-iscenter"><center>Seminario Final IS</center></h1>
+
+<img src="Logo-IS2.png">
+<h2 class="mume-header" id="centerintroduccioncenter-frank-"><center>Introduccion</center> <!-- Frank --></h2>
+
+<p><strong>Museo</strong> es un problema que explotar&#xE1; nuestras habilidades como futuros profesionales en nuestra rama, incluyendo como herramienta gen&#xE9;rica el conjunto de conceptos necesarios en la organizaci&#xF3;n de un proyecto, que hemos visto durante el curso, con uno de los paradigmas de la programaci&#xF3;n &#xE1;gil en la cabecera. Adem&#xE1;s nos aportar&#xE1; y nos vincular&#xE1; a&#xFA;n m&#xE1;s en la pr&#xE1;ctica sobre el dise&#xF1;o de una base de datos aplicada pensando en las reglas del negocio que nos ofrece el cliente, en este caso un museo.</p>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Alcance del producto</font></strong> <!--Tony--></p>
+<p>Como el museo desea presentar un cat&#xE1;logo con las obras de arte que se encuentran expuestas en sus salas, el producto tiene un alcance internacional, ya que mediante la p&#xE1;gina web<br>
+personas de cualquier parte del mundo tendr&#xE1;n acceso a la informaci&#xF3;n sobre la exposici&#xF3;n del museo para as&#xED; decidir si hacen de este un destino para sus viajes vacacionales. Tambi&#xE9;n va a ser un producto altamente utilizado por el propio personal del museo para mantener el control del pr&#xE9;stamo, restauraci&#xF3;n y valoraci&#xF3;n econ&#xF3;mica de las obras.</p>
+<div class="line"></div>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Resumen</font></strong>  <!-- Frank --></p>
+<p>Seg&#xFA;n los requerimientos del museo existen funciones que debe cumplir el futuro Software, como el almacenamiento de los datos, la gesti&#xF3;n y separaci&#xF3;n del personal que acceder&#xE1; a la p&#xE1;gina seg&#xFA;n los roles que se encapsulan en el concepto de usuario, al igual que el procesamiento de los pr&#xE9;stamos de obras. Todo el desarrollo de esta l&#xF3;gica la dividiremos en tres etapas, o dos Updates a partir de la primera entrega funcional, utilizando una metodolog&#xED;a &#xE1;gil, Srum. Los objetivos del proyecto, se lograr&#xE1;n siguiendo una arquitectura 3-capas, dadas las funcionalidades que se quieren lograr por separado, entre otras caracter&#xED;sticas del proyecto que hacen que nos favorezca dicha arquitectura para el desarrollo del software. Se pretende adem&#xE1;s que sea una aplicaci&#xF3;n multiplataforma, y qu&#xE9; mejor para esto que una p&#xE1;gina web para el frontend. Ofrecemos un dise&#xF1;o amigable para el entendimiento de la estructura de la base de datos con un Modelo Entidad Relacional Extendido (MERX), que constituye el kernel de nuestro trabajo. B&#xE1;sicamente la otra parte del proyecto es la aplicaci&#xF3;n de operaciones CRUD sobre estos datos cumpliendo las reglas del negocio.</p>
+<div class="line"></div>
+<h2 class="mume-header" id="centerrequerimientos-espec%C3%ADficoscenter-tony-"><center>Requerimientos espec&#xED;ficos</center> <!--Tony--></h2>
+
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Requerimientos Funcionales</font></strong>  <!--Frank--></p>
+<ul>
+<li>
+<p>Una base de datos din&#xE1;mica con los siguientes datos:</p>
+  <div class="box">
+<ul>
+<li><strong>Cat&#xE1;logo de obras de arte</strong> e <strong>informaci&#xF3;n relacionada con cada una</strong>, como su autor y otros datos espec&#xED;ficos.</li>
+<li><strong>Informaci&#xF3;n de restauraci&#xF3;n</strong> de las obras.</li>
+<li><strong>Informaci&#xF3;n de pr&#xE9;stamos</strong> de las obras, incluye la lista de museos con los que se puede colaborar, el tiempo de pr&#xE9;stamo y el importe pagado al museo por cada obra cedida.</li>
+<li>Qu&#xE9; <strong>Obras</strong> se exponen <strong>en cada sala</strong> del museo.</li>
+<li><strong>Valoraci&#xF3;n</strong> de cada obra.</li>
+<li>Informaci&#xF3;n de autenticaci&#xF3;n</li>
+</ul>
+  </div>
+</li>
+<li>
+<p>Un sistema de consultas a dicha base de datos que permita recibir en formato de texto los datos almacenados, incluyendo:</p>
+<div class="box">
+<ul>
+<li>[<strong>Restaurador Jefe</strong>] Una lista de las obras que les toca ser restauradas(dada la periodicidad requerida para la restauraci&#xF3;n), as&#xED; como las que ya han pasado por este proceso.</li>
+<li>[<strong>Director del museo</strong>] La valoraci&#xF3;n de las obras (la suma de todas las calificaciones)</li>
+</ul>
+ </div>
+</li>
+<li>
+<p>La existencia de una &quot;<strong>cola de pedidos</strong>&quot; por cada una de las obras que permita ceder una obra pedida por un museo, luego que concluya el periodo de pr&#xE9;stamo por el cual se encontraba dicha obra en otro museo, en caso de que as&#xED; ocurra.</p>
+</li>
+<li>
+<p>El sistema debe funcionar estando incluso sin informaci&#xF3;n inicial, o sea, la base de datos puede estar vac&#xED;a y debe funcionar as&#xED;.</p>
+</li>
+</ul>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Requerimientos No Funcionales</font></strong></p>
+<ul>
+<li>La aplicaci&#xF3;n no tendr&#xE1; gran cantidad de niveles de profundidad en la parte visual.</li>
+<li>La interfaz ser&#xE1; minimalista, este no es objetivo del proyecto.</li>
+<li>El encargado del cat&#xE1;logo (y solo &#xE9;l) ser&#xE1; quien tenga disponible la funcionalidad de modificar o introducir datos sobre las obras.</li>
+<li>El restaurador jefe (y solo el) ser&#xE1; quien indique en el programa que una obra est&#xE1; en reparacion o deja de estarlo, e introduzca la informaci&#xF3;n relacionada con esto.</li>
+<li>Un sistema de autenticaci&#xF3;n para todos los usuarios, que otorge funcionalidades en la interfaz, dado el tipo de usuario logeado. Esto se ver&#xE1; m&#xE1;s adelante en el diagrama de casos de uso.</li>
+</ul>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Requerimientos de Entorno</font></strong> <!-- Reutilizado--></p>
+<ul>
+<li>No ser&#xE1; requerimiento el sistema operativo en el que se ejecute nuestro proyecto, dado que utilizaremos desarrollo web con python, y todo esto es multiplataforma. Adem&#xE1;s nuestro cliente cuenta con los servidores sobre los que vamos a montar el Software.</li>
+<li>Al ser una aplicaci&#xF3;n web el usuario podr&#xE1; aceder al software desde cualquier dispositivo con navegador.</li>
+</ul>
+<h2 class="mume-header" id="centerfuncionalidades-del-productocenter-ale-"><center>Funcionalidades del Producto</center> <!-- Ale --></h2>
+
+<p>Como en este proyecto, hay que tener en cuenta los diferentes tipos de usuario, ya que en dependencia de sus ocupaciones ser&#xE1;n las funcionalidades a las que pueden acceder, el siguiente diagrama de casos se uso muestra las funcionalidades para cada tipo de usuario.</p>
+<p><img src="IS-UseCase.png" alt></p>
+<h2 class="mume-header" id="centerenfoque-metodol%C3%B3gicocenter-reutilizado-"><center>Enfoque Metodol&#xF3;gico</center> <!-- Reutilizado--></h2>
+
+<p>Teniendo en cuenta las caracter&#xED;sticas de nuestro equipo, nos hace falta una metodolog&#xED;a &#xE1;gil, espec&#xED;ficamente Scrum, ya que tenemos un Scrum Master en el equipo y como el museo esta interesado en que el proyecto se culmine r&#xE1;pido, su personal estar&#xE1; disponible para realizar reuniones sistem&#xE1;ticas con nuestro equipo. La frecuencia de reuniones entre los miembros del equipo ser&#xE1; diaria y con el cliente ser&#xE1; semanalmente, siguiendo el patron usual en esta metodolog&#xED;a &#xE1;gil.</p>
+<h2 class="mume-header" id="centerplanificaci%C3%B3n-y-riesgoscenter"><center>Planificaci&#xF3;n y Riesgos</center></h2>
+
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Diagrama o Tablero</font></strong>  <!-- Alejandra --></p>
+<p>Para organizar el tiempo que le dedicamos a cada actividad desde el an&#xE1;lisis del problema hasta la instalaci&#xF3;n en el museo del sistema de gesti&#xF3;n, nos trazamos un plan de actividades con la ayuda de un Diagrama Gant.</p>
+<p><img src="DiagramaGant-IS.jpg" alt></p>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Hitos</font></strong> <!-- Alejandra --></p>
+<p>Como para la realizaci&#xF3;n del proyecto contamos con un plazo de 35 d&#xED;as, establecimos un plan de hitos con los cuales poder medir el avance del proyecto y presentarle a nuestro cliente como va el proyecto para el cual nos contrata.</p>
+<div class="box">
+<h3><font style="margin-left: 30px">Hito 1:</font></h3>
+<ul>
+<li>Gestionar <strong>Usuarios</strong>.
+<ul>
+<li>Agregar Usuarios</li>
+<li>Editar permisos de Usuarios</li>
+<li>Permitir la autenticaci&#xF3;n de usuarios con nombre y contrase&#xF1;a.</li>
+</ul>
+</li>
+<li>Gestionar <strong>Cat&#xE1;logo</strong>.
+<ul>
+<li>Actualizaci&#xF3;n (eliminar, insertar obras) del cat&#xE1;logo por usuarios autorizados (encargado del cat&#xE1;logo).</li>
+<li>Permitir la visualizaci&#xF3;n del cat&#xE1;logo para todos los usuarios.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="box">
+<h3><font style="margin-left: 30px">Hito 2:</font></h3>
+<ul>
+<li>Gestionar <strong>restauraci&#xF3;n</strong> de obras.
+<ul>
+<li>Permitir a usuarios con permiso (jefe de restauraci&#xF3;n) enviar a restauraci&#xF3;n obras de arte.</li>
+<li>Permitir al jefe de restauraci&#xF3;n obtener la informaci&#xF3;n correspondiente a la restauraci&#xF3;n de las obras de arte en orden cronol&#xF3;gico inverso.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="box">
+<h3><font style="margin-left: 30px">Hito 3:</font></h3>
+<ul>
+<li>Gestionar <strong>pr&#xE9;stamo</strong> de obras.
+<ul>
+<li>Posibilitar el pr&#xE9;stamo de obras de arte a otros museos por usuarios autorizados (director del museo).</li>
+<li>Permitirle al director del museo el acceso a la suma total del valor de las obras de arte que tiene el museo.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><em>Nota:</em> Paralelamente a cada uno de los hitos trazados se ir&#xE1;n mostrando versiones de la apariencia de la p&#xE1;gina web al cliente para que este nos haga saber sus preferencias y los cambios que le desea hacer.</p>
+<p><strong>&#x1F53B; <font color="1C9997" class="header2">Riesgos</font></strong> <!-- Reutilizado--></p>
+<ul>
+<li>Un problema com&#xFA;n en el desarrollo de cualquier proyecto, es la p&#xE9;rdida de informaci&#xF3;n, debido a la confusi&#xF3;n entre versiones y problemas de almacenamiento. Para evitar esta problem&#xE1;tica, usaremos el sistema de control de versiones GIT, y el sistema de almacenamiento remoto de GitHub.</li>
+<li>Otro inconveniente podr&#xED;a ser la falta de comunicaci&#xF3;n entre los miembros de equipo, tambi&#xE9;n entre este y el cliente.</li>
+<li>Podr&#xE1; afectarnos el corto tiempo requerido por la empresa para la entrega del proyecto.</li>
+</ul>
+<h3 class="mume-header" id="centerarquitecturacenter-frank-"><center>Arquitectura</center> <!-- Frank --></h3>
+
+<p>Dado que por lo general se requiere facilidad de testeo unitario, o sea, una separaci&#xF3;n entre capas bien definidas para una mayor limpieza en las pruebas y el mantenimiento del Software, utilizaremos una arquitectura de Dominio. Este proyecto lo definimos en las siguientes 4 capas:</p>
+<div class="box">
+<ul>
+<li><strong>Interfaces</strong>: Una capa de interfaz sencilla que permita una autenticaci&#xF3;n, y dada esa autenticaci&#xF3;n, el mostrado de diferentes interfaces, que coincidan con el rol del usuario, es donde residen las funcionalidades de la p&#xE1;gina web.</li>
+<li><strong>Aplicaci&#xF3;n/Casos de Uso</strong>: Atendiendo a los diferentes tipos de usuario que pueden acceder a la aplicaci&#xF3;n se conocen los distintos casos de uso, en esta capa contiene las funcionalidades de dirigir el flujo de los casos de uso.</li>
+<li><strong>Dominio</strong>: Es donde reside toda la l&#xF3;gica del negocio.</li>
+<li><strong>Datos</strong>: Es donde se almacenan los modelos de datos, por ejemplo los models de Django.</li>
+</ul>
+</div>
+<h3 class="mume-header" id="centerpatrones-de-visualizaci%C3%B3n-y-de-datoscenter-tony-"><center>Patrones de Visualizaci&#xF3;n y de Datos</center> <!-- Tony --></h3>
+
+<p>Django fue dise&#xF1;ado para promover el acoplamiento d&#xE9;bil y la estricta separaci&#xF3;n entre las piezas de una aplicaci&#xF3;n. En la capa de vista usaremos un sistema de plantillas que nos ofrece Django para poder separar la l&#xF3;gica de negocios de la l&#xF3;gica de presentaci&#xF3;n; las URLconfs de Django son un claro ejemplo de este principio en la pr&#xE1;ctica. En una aplicaci&#xF3;n Web de Django, la definici&#xF3;n de la URL y la funci&#xF3;n de vista que se llamar&#xE1; est&#xE1;n d&#xE9;bilmente acopladas; de esta manera, la decisi&#xF3;n de cu&#xE1;l debe ser la URL para una funci&#xF3;n, y la implementaci&#xF3;n de la funci&#xF3;n misma, residen en dos lugares separados. Esto permite el desarrollo de una pieza sin afectar a la otra.</p>
+<p>Con respecto a la capa de la base de datos, aplicamos esa misma filosof&#xED;a para el acceso l&#xF3;gico a los datos usando los modelos que ofrece Django para ejecutar c&#xF3;digo SQL y retornar estructuras de datos convenientes en Python sin la necesidad de escribir directamente en SQL. Cada modelo generalmente corresponde a una tabla &#xFA;nica de la base de datos, y cada atributo de un modelo generalmente corresponde a una columna en esa tabla. El nombre de atributo corresponde al nombre de columna, y el tipo de campo corresponde al tipo de columna de la base de datos.</p>
+<h3 class="mume-header" id="centerprincipio-solidcenter-tony-"><center>Principio SOLID</center> <!-- Tony --></h3>
+
+<p><img src="sOlid2.png" alt></p>
+<ul>
+<li>Como nuestro proyecto ser&#xE1; hecho en Django toda clase que creemos sera como heredera de las ya existentes en este paquete y, respetando la separaci&#xF3;n clara de Django de models/views/templates, podremos crear con bastante facilidad clases que solo tengan una responsabilidad &#xFA;nica en el proyecto (Principio de Responsabilidad &#xDA;nica o Single Responsibility Principle) .</li>
+<li>Aprovechando el polimorfismo caracter&#xED;stico de Python podemos resolver la extensibilidad de nuestro proyecto. Por ejemplo, creando clases gen&#xE9;ricas como &#x201C;Usuario&#x201D; y que de ella se deleguen responsabilidades como &#x201C;Director del museo&#x201D; o &#x201C;Encargado del cat&#xE1;logo&#x201D; se podr&#xED;an crear sin demasiado problema nuevos tipos de usuarios con responsabilidades &#xFA;nicas y distintas de los ya existentes sin necesidad de cambiar el c&#xF3;digo ya escrito con anterioridad (Principio Open/Closed).</li>
+<li>Si nos aseguramos en todo momento de usar las clases m&#xE1;s gen&#xE9;ricas y solo especificar en alg&#xFA;n funcionamiento espec&#xED;fico, se podr&#xED;a resolver sin problema el hecho de utilizar clases extendidas de las clases ya existentes, por lo que no habr&#xED;a ning&#xFA;n problema a la hora de incorporarlas al proyecto (Principio de Sustituci&#xF3;n de Liskov)</li>
+<li>Para asegurarnos de que no implementamos cosas que no vamos a utilizar trataremos de desacoplar funcionalidades y, por medio de la herencia m&#xFA;ltiple de Python, utilizarlas cuando sea conveniente hacerlo evitando as&#xED; que las clases implementen cosas innecesarias (Principio de segregaci&#xF3;n de interfaces)</li>
+<li>Como vamos a utilizar la arquitectura de capas de Django (models/views/templates) implementaremos cada uno de estos en ficheros distintos tratando de desacoplar lo mayor posible y evitar las dependencias innecesarias de estas capas de abstracci&#xF3;n, de esta forma evitaremos las dependencias innecesarias que podr&#xED;an en un futuro sernos un problema a la hora de testear estas capas (Principio de inversi&#xF3;n de dependencias).</li>
+</ul>
+<h3 class="mume-header" id="centermodelo-de-datoscenter"><center>Modelo de Datos</center></h3>
+
+<p>Para modelar los datos y sus relaciones utilizaremos una base de datos relacional, el siguiente MERX muetra los conjuntos de entidades, los atributos y las relaciones de la base de datos del museo.</p>
+<p><img src="MEER-IS2.png" alt></p>
+<h2 class="mume-header" id="centeresqueleto-core-de-la-aplicaci%C3%B3ncenter-frank-"><center>Esqueleto (core) de la Aplicaci&#xF3;n</center> <!-- Frank --></h2>
+
+<p>Como el softwares utilizar&#xE1; Django con una arquitectura dominio, el proyecto estar&#xE1; estructurado atendiendo a 4 capas fundamentales: los datos, el dominio, los casos de uso y las interfaces, para cada uno se crea una carpeta en la que se guardar&#xE1;n todods los archivos correspondientes a la capa en cuesti&#xF3;n. En cada capa, para incrementar el desacoplamiento se separan en subcarpetas que separen a su vez los distintos archivos de los casos de uso, de las interfaces para diferentes usuarios, los distintos dominios, etc. A su vez para cada subcarpeta de una capa se tienen un conjunto de archivos .py que contendr&#xE1;n el codigo.</p>
+<center><img alt="Foto de la estructura del proyecto seg&#xFA;n lo necesario para separar las aplicaciones o capas en Django" title="Estructura del Proyecto en Django" src="photo_2022-05-24_10-23-31.jpg"></center>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
+
+
+    {% endblock  %}
