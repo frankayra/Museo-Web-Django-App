@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> {% block title %} Title {% endblock %} </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="undertext"> 
+            <nav> 
+                <ul> 
+                   <li class="navbar">  <a href="{% url 'home' %}">Inicio </a> </li>
+                   <li class="navbar"> <a href="{% url 'services' %}">Servicios </a> </li> 
+                   <li class="navbar"> <a href="{% url 'catalog' %}">Catálogo </a> </li>
+               <!--    <li class="navbar"> <a href="contact">Contact </a> </li> --> 
+                </ul>
+            </nav>         
+        </div>
+        
+        <section> {% block info %} {% endblock %} </section>
+        
+        <footer> 
+         <p>correo:  <a href="mailto:amozon1113@gmail.com"> museo.ba@nauta.cu </a></p> 
+         <p>telefono: 72813046</p>
+
+        </footer>
+        
+    </body>
+</html>
