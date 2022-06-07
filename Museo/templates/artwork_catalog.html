@@ -1,14 +1,11 @@
 {% extends 'base.html' %} 
 
 {% block info %}
-
-<h3>Obras en exposición en la {{room}}</h3>
-
 <ul>
 
 {% for a in artworks %}
 
-<li><a href = "{{a.id_artwork__artwork_name}}"> {{a.id_artwork__artwork_name}} </a></li>
+<li><a href = {{a.artwork_name}}> {{a.artwork_name}} </a></li>
 
 {% endfor %}
 
